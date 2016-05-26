@@ -1,4 +1,4 @@
-FROM java:7-jre
+FROM java:8-jre
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
@@ -6,7 +6,7 @@ RUN mkdir -p "$CATALINA_HOME" \
 	&& mkdir -p "/ThingworxStorage" \
 	&& mkdir -p "/ThingworxBackupStorage"
 
-#	&& chown tomcat7:tomcat7 /ThingworxStorage /ThingworxBackupStorage \
+#	&& chown tomcat8:tomcat8 /ThingworxStorage /ThingworxBackupStorage \
 #	&& chown 755 /ThingworxStorage /ThingworxBackupStorage
 
 WORKDIR $CATALINA_HOME
@@ -27,8 +27,8 @@ RUN gpg --keyserver pool.sks-keyservers.net --recv-keys \
 	F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE \
 	F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
 
-ENV TOMCAT_MAJOR 7
-ENV TOMCAT_VERSION 7.0.61
+ENV TOMCAT_MAJOR 8
+ENV TOMCAT_VERSION 8.0.35
 ENV TOMCAT_TGZ_URL https://www.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz
 
 RUN curl -SL "$TOMCAT_TGZ_URL" -o tomcat.tar.gz \
@@ -44,5 +44,5 @@ ENV CATALINA_OPTS -Djava.net.preferIPv4Stack=true
 COPY build/tomcat-users.xml $CATALINA_HOME/conf/
 COPY build/Thingworx.war $CATALINA_HOME/webapps/
 
-EXPOSE 8080
+EXPOSE 8080 443
 CMD ["catalina.sh", "run"]

@@ -26,8 +26,13 @@ HowTo
 
  * You need to add the Thingworx.war file in the build directory.
  * docker build -t thingworx .
- * docker run -d -p 8080:8080 thingworx
- * connect to http://localhost:8080
+ * docker run -d --name thingworx -p 8080:8080 -p 8043:443 thingworx
+ * connect to http://localhost:8080/Thingworx
  * default account is Administrator/admin
+
+Connect to it via: docker exec -it thingworx bash
+
+Stop with: docker stop thingworx
+Start with: docker start thingworx
 
 You should use Docker shared volumes to get the TW storage directories (/ThingworxStorage and ThingworxBackupStorage) outside of the container. Example : docker run -d -p 8080:8080 -v $HOME/TW/ThingworxStorage:/ThingworxStorage -v $HOME/TW/ThingworxBackupStorage:/ThingworxBackupStorage thingworx
