@@ -44,5 +44,5 @@ ENV CATALINA_OPTS -Djava.net.preferIPv4Stack=true
 COPY build/tomcat-users.xml $CATALINA_HOME/conf/
 COPY build/Thingworx.war $CATALINA_HOME/webapps/
 
-EXPOSE 8080 443
+EXPOSE 8080
 CMD ["catalina.sh", "run"]

@@ -26,7 +26,7 @@ HowTo
 
  * You need to add the Thingworx.war file in the build directory.
  * docker build -t thingworx .
- * docker run -d --name thingworx -p 8080:8080 -p 8043:443 thingworx
+ * docker run -d --name thingworx -p 8080:8080 thingworx
  * connect to http://localhost:8080/Thingworx
  * default account is Administrator/admin
 
