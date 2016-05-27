@@ -26,7 +26,7 @@ Installation
 You can open a shell in the container with: `docker exec -it thingworx bash`
 
 Stop with: `docker stop thingworx`
-Start with: `docker start thingworx``
+Start with: `docker start thingworx`
 
 You should use Docker shared volumes to access the TW storage directories (/ThingworxStorage and ThingworxBackupStorage) outside of the container. For example: 
 
