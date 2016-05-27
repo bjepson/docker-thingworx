@@ -30,5 +30,5 @@ Start with: `docker start thingworx``
 
 You should use Docker shared volumes to access the TW storage directories (/ThingworxStorage and ThingworxBackupStorage) outside of the container. For example: 
 
-  docker run -d -p 8080:8080 -v $HOME/TW/ThingworxStorage:/ThingworxStorage \
-  -v $HOME/TW/ThingworxBackupStorage:/ThingworxBackupStorage thingworx
+    docker run -d -p 8080:8080 -v $HOME/TW/ThingworxStorage:/ThingworxStorage \
+    -v $HOME/TW/ThingworxBackupStorage:/ThingworxBackupStorage thingworx
