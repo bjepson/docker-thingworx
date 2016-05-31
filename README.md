@@ -7,7 +7,7 @@ Thingworx is a platform dedicated to design and run IoT/M2M applications. See ht
 
 **TW is an under licenced software, you need to buy it.**
 
-I have to use it in my work at Rtone (http://rtone.fr) and a Docker container should be useful to share the plateform with colleagues.
+The original author had to use it in his work at Rtone (http://rtone.fr) and a Docker container proved useful to share the platform with colleagues.
 
 Content of the container
 ------------------------
@@ -32,3 +32,10 @@ You should use Docker shared volumes to access the TW storage directories (/Thin
 
     docker run -d -p 8080:8080 -v $HOME/TW/ThingworxStorage:/ThingworxStorage \
     -v $HOME/TW/ThingworxBackupStorage:/ThingworxBackupStorage thingworx
+
+
+If you need to access the Docker container from another computer on the same network, you'll probably need to set up port forwarding. For example, on Windows, you'd do:
+
+    netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=docker
+
+Stop it with: `netsh interface portproxy delete v4tov4 listenport=8080 listenaddress=0.0.0.0`
