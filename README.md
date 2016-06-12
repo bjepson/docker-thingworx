@@ -5,14 +5,14 @@ Tested with TW 7.1.
 
 Thingworx is a platform dedicated to design and run IoT/M2M applications. See http://www.thingworx.com/
 
-**TW is an under licenced software, you need to buy it.**
+You will need to obtain ThingWorx from PTC. It is available as a 120-day Developer Trial Edition. Sign up for a developer account at http://developer.thingworx.com and visit your dashboard to find the Developer Trial Edition.
 
-The original author had to use it in his work at Rtone (http://rtone.fr) and a Docker container proved useful to share the platform with colleagues.
+The original author had used ThingWorx in his work at Rtone (http://rtone.fr) and a Docker container proved useful to share the platform with colleagues.
 
 Content of the container
 ------------------------
 
-TW is a java based webapp. It runs on a tomcat-8/jre-8 environnement with some jvm options. TW also needs two directories to store its data.
+ThingWorx is a Java based web app. It runs on a tomcat-8/jre-8 environment with some jvm options. ThingWorx also needs two directories to store its data.
 
 Installation
 ------------
