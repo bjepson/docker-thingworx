@@ -33,9 +33,4 @@ You should use Docker shared volumes to access the TW storage directories (/Thin
     docker run -d -p 8080:8080 -v $HOME/TW/ThingworxStorage:/ThingworxStorage \
     -v $HOME/TW/ThingworxBackupStorage:/ThingworxBackupStorage thingworx
 
-
-If you need to access the Docker container from another computer on the same network, you'll probably need to set up port forwarding. For example, on Windows, you'd do:
-
-    netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=docker
-
-Stop it with: `netsh interface portproxy delete v4tov4 listenport=8080 listenaddress=0.0.0.0`
+If you need to access the Docker container from another computer on the same network, you may need to open port 8080 on your computer's firewall.
